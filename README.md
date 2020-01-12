@@ -15,5 +15,4 @@
         <li>User content (Create, Update, Delete)</li>
         <li>External APi</li>
     </ul>
-
 <h2>4.) stretch goals</h2>
