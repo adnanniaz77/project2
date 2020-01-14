@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/adnanniaz77/project2/issues"
   },
-  "homepage": "https://github.com/adnanniaz77/project2#readme"
+  "homepage": "https://github.com/adnanniaz77/project2#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
