@@ -1,6 +1,8 @@
 $(document).ready(function() {
     $("#submit").on("click", function(e) {
         e.preventDefault();
+        $("#data_table").empty();
+
         let ipAdd = $("#ipAdd").val();
 
         $.ajax({
