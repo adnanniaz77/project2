@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/adnanniaz77/project2#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "unirest": "^0.6.0"
   },
   "devDependencies": {}
 }
