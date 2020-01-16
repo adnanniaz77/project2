@@ -6,6 +6,6 @@ router.get("/api", (req, res) => {
     console.log("You have got an api request");
 });
 
-router.post();
+// router.post();
 
 module.exports = router;
