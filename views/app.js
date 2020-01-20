@@ -43,15 +43,20 @@ $(document).ready(function() {
 
     $("#startAppBtn").on("click", function(e) {
         e.preventDefault();
-        const userData = { name: $("#name").val() };
-        console.log(userData);
 
-        $.ajax({
-            url: "/new",
-            method: "POST",
-            data: userData
-        }).then(res => {
-            window.location.href = "/search";
-        });
+        if ($("#name").val() == "") {
+            alert("Please enter a valid ip address");
+        } else {
+            const userData = { name: $("#name").val() };
+            console.log(userData);
+
+            $.ajax({
+                url: "/new",
+                method: "POST",
+                data: userData
+            }).then(res => {
+                window.location.href = "/search";
+            });
+        }
     });
 });
