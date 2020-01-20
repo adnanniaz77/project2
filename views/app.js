@@ -41,7 +41,7 @@ $(document).ready(function() {
         }
     });
 
-    $("#registerUserBtn").on("click", function(e) {
+    $("#startAppBtn").on("click", function(e) {
         e.preventDefault();
         const userData = { name: $("#name").val() };
         console.log(userData);
@@ -51,7 +51,7 @@ $(document).ready(function() {
             method: "POST",
             data: userData
         }).then(res => {
-            window.location.href = "/about";
+            window.location.href = "/search";
         });
     });
 });
