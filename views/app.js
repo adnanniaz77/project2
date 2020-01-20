@@ -59,4 +59,22 @@ $(document).ready(function() {
             });
         }
     });
+
+    $("#showHistoryBtn").on("click", function(e) {
+        e.preventDefault();
+        $.ajax({
+            url: "/users/search",
+            method: "GET"
+        }).then(res => {
+            // console.log(res);
+
+            for (let each of res) {
+                $("#history").append(`
+                    <tr>
+                        <td>${each.name}</td>
+                    </tr>
+                `);
+            }
+        });
+    });
 });

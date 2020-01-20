@@ -7,6 +7,12 @@ router.get("/api", (req, res) => {
     console.log("You have got an api request");
 });
 
+router.get("/users/search", (req, res) => {
+    db.User.findAll({}).then(user => {
+        res.send(user);
+    });
+});
+
 router.post("/new", (req, res) => {
     db.User.create({
         name: req.body.name
