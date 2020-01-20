@@ -40,4 +40,18 @@ $(document).ready(function() {
             });
         }
     });
+
+    $("#registerUserBtn").on("click", function(e) {
+        e.preventDefault();
+        const userData = { name: $("#name").val() };
+        console.log(userData);
+
+        $.ajax({
+            url: "/new",
+            method: "POST",
+            data: userData
+        }).then(res => {
+            window.location.href = "/about";
+        });
+    });
 });

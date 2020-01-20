@@ -9,4 +9,9 @@ app.use("/", require("./routes/apiRoutes"));
 app.use(express.static("./views/"));
 app.use("/", require("./routes/clientRoutes"));
 
-app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));
+const db = require("./models");
+db.sequelize.sync().then(() => {
+    app.listen(PORT, () =>
+        console.log(`Listening on http://localhost:${PORT}`)
+    );
+});
