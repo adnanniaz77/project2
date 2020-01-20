@@ -22,66 +22,6 @@
     <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
         <div class="container">
             <a class="navbar-brand" href="/">LAM<img src="https://img.icons8.com/color/32/000000/address.png"></a>
-
-            <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"></button>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <!-- <button onclick="document.getElementById('id01').style.display='block'"
-                    style="width:auto; margin-right: 10px;">Login</button> -->
-
-                <!-- <button onclick="document.getElementById('id02').style.display='block'"
-                    style="width:auto;">Register</button> -->
-
-                <!-- Login Modal -->
-                <div id="id01" class="modal">
-                    <form class="modal-content animate" style="max-width: 650px">
-                        <div class="imgcontainer">
-                            <img src="./assets/img/login.png" style="width: 100px;" alt="Avatar" class="avatar">
-                        </div>
-
-                        <div class="container-fluid">
-                            <label for="uname"><b>Username</b></label>
-                            <input type="text" name="uname" required>
-
-                            <label for="psw"><b>Password</b></label>
-                            <input type="password" name="psw" required>
-
-                            <button type="submit">Login</button>
-                            <label>
-                                <input type="checkbox" checked="checked" name="remember"> Remember me
-                            </label>
-                        </div>
-
-                        <div class="container" style="background-color:#f1f1f1">
-                            <button type="button" onclick="document.getElementById('id01').style.display='none'"
-                                class="cancelbtn">Cancel</button>
-                            <span class="psw">Forgot <a href="#">password?</a></span>
-                        </div>
-                    </form>
-                </div>
-
-                <!-- Register Modal -->
-                <div id="id02" class="modal">
-                    <form class="modal-content animate" style="max-width: 650px">
-                        <div class="imgcontainer">
-                            <span onclick="document.getElementById('id02').style.display='none'" class="close"
-                                title="Close Modal">&times;</span>
-                            <img src="./assets/img/register.png" style="width: 100px;" alt="Avatar" class="avatar">
-                        </div>
-
-                        <div class="col text-center mt-3 mb-3">
-                            <h3>Hi<br />LAM IP Location Finder</h3>
-                        </div>
-
-                        <div class="container-fluid">
-                            <label for="uname" style="color: red;"><b>Please Enter your Name:</b></label>
-                            <input type="text" id="name" name="uname" required>
-
-                            <button type="submit" id="registerUserBtn" class="btn-text mb-5">Visit the Site</button>
-                        </div>
-                    </form>
-                </div>
-
-            </div>
         </div>
     </nav>
     <header class="masthead text-white text-center"
@@ -105,7 +45,7 @@
                                     type="submit">Locate</button>
                             </div>
                             <div class="col-12 col-md-3">
-                                <button id="submit" class="btn btn-primary btn-block btn-lg"
+                                <button id="showHistoryBtn" class="btn btn-primary btn-block btn-lg"
                                     type="submit">History</button>
                             </div>
                         </div>
@@ -202,21 +142,9 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script>
         // Get the modal
-        var modal = document.getElementById('id01');
-        var modal2 = document.getElementById('id02');
         var modal3 = document.getElementById('id03');
 
         // When the user clicks anywhere outside of the modal, close it
-        $(window).on('load', function () {
-            modal2.style.display = "block";
-        });
-
-        window.onclick = function (event) {
-            if (event.target == modal2) {
-                modal2.style.display = "none";
-            }
-        }
-
         window.onclick = function (event) {
             if (event.target == modal3) {
                 modal3.style.display = "none";
