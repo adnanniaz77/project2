@@ -45,13 +45,14 @@ $(document).ready(function() {
         e.preventDefault();
 
         if ($("#name").val() == "") {
-            alert("Please enter a valid ip address");
+            alert("Please enter your name");
+            $("#name").css("border", "solid 2px red");
         } else {
             const userData = { name: $("#name").val() };
             console.log(userData);
 
             $.ajax({
-                url: "/new",
+                url: "/users/new",
                 method: "POST",
                 data: userData
             }).then(res => {

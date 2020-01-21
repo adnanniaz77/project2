@@ -13,7 +13,7 @@ router.get("/users/search", (req, res) => {
     });
 });
 
-router.post("/new", (req, res) => {
+router.post("/users/new", (req, res) => {
     db.User.create({
         name: req.body.name
     }).then(() => {
