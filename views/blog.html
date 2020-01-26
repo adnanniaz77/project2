@@ -33,35 +33,56 @@
             </nav>
         </div>
     </nav>
+
     <main class="page project-page">
         <section class="portfolio-block project">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-md-6 offset-md-1 info mb-5">
-                        <h1><strong>Information Technlogy</strong><br></h1><small class="text-info"><strong>by Adnan
-                                Niaz</strong></small>
-                        <p>Nam a ultrices mauris. Nam efficitur, lorem a vehicula interdum, ligula velit euismod lorem,
-                            vitae vehicula ligula tortor eu leo. Maecenas porttitor massa ut vestibulum euismod. Aliquam
-                            eget mi aliquam.</p>
+                    <div class="col col-md-8">
+                        <div class="info mb-5">
+                            <h1><strong>Information Technlogy</strong><br></h1><small class="text-info"><strong>by Adnan
+                                    Niaz</strong></small>
+                            <p>Nam a ultrices mauris. Nam efficitur, lorem a vehicula interdum, ligula velit euismod
+                                lorem,
+                                vitae vehicula ligula tortor eu leo. Maecenas porttitor massa ut vestibulum euismod.
+                                Aliquam
+                                eget mi aliquam.</p>
+                        </div>
+                        <div class="info mb-5">
+                            <h1><strong>Information Technlogy</strong><br></h1><small class="text-info"><strong>by Adnan
+                                    Niaz</strong></small>
+                            <p>Nam a ultrices mauris. Nam efficitur, lorem a vehicula interdum, ligula velit euismod
+                                lorem,
+                                vitae vehicula ligula tortor eu leo. Maecenas porttitor massa ut vestibulum euismod.
+                                Aliquam
+                                eget mi aliquam.</p>
+                        </div>
+                        <div class="info mb-5">
+                            <h1><strong>Information Technlogy</strong><br></h1><small class="text-info"><strong>by Adnan
+                                    Niaz</strong></small>
+                            <p>Nam a ultrices mauris. Nam efficitur, lorem a vehicula interdum, ligula velit euismod
+                                lorem,
+                                vitae vehicula ligula tortor eu leo. Maecenas porttitor massa ut vestibulum euismod.
+                                Aliquam
+                                eget mi aliquam.</p>
+                        </div>
                     </div>
-                    <div class="col-12 col-md-3 offset-md-1 meta">
-                        <div class="tags"><span class="meta-heading">Authors</span><a href="#">Richard</a><a
-                                href="#">James Peter</a><a href="#">Uknown</a><a href="#">some new guy</a><a
-                                href="#">who cares</a><a href="#">maybe this</a><a href="#">Rick</a></div>
-                    </div>
-                    <div class="col-12 col-md-6 offset-md-1 info mb-5">
-                        <h1><strong>Information Technlogy</strong><br></h1><small class="text-info"><strong>by Adnan
-                                Niaz</strong></small>
-                        <p>Nam a ultrices mauris. Nam efficitur, lorem a vehicula interdum, ligula velit euismod lorem,
-                            vitae vehicula ligula tortor eu leo. Maecenas porttitor massa ut vestibulum euismod. Aliquam
-                            eget mi aliquam.</p>
-                    </div>
-                    <div class="col-12 col-md-6 offset-md-1 info mb-5">
-                        <h1><strong>Information Technlogy</strong><br></h1><small class="text-info"><strong>by Adnan
-                                Niaz</strong></small>
-                        <p>Nam a ultrices mauris. Nam efficitur, lorem a vehicula interdum, ligula velit euismod lorem,
-                            vitae vehicula ligula tortor eu leo. Maecenas porttitor massa ut vestibulum euismod. Aliquam
-                            eget mi aliquam.</p>
+                    <div class="col col-md-3 offset-1">
+                        <h3>Authors</h3>
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Cras justo odio
+                                <span class="badge badge-primary badge-pill">14</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Dapibus ac facilisis in
+                                <span class="badge badge-primary badge-pill">2</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Morbi leo risus
+                                <span class="badge badge-primary badge-pill">1</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <div class="more-projects"></div>
@@ -82,6 +103,18 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
     <script src="assets/js/theme.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            // get all Authors
+            $.ajax({
+                url: '/api/users/all',
+                method: 'GET',
+            }).then(authors => {
+                console.log(authors)
+            });
+        })
+    </script>
 </body>
 
 </html>
