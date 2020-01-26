@@ -2,8 +2,10 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");
 
-router.get("/", (req, res) => {
-    res.send("User Routes");
+router.get("/all", (req, res) => {
+    db.User.findAll({
+        include: [db.Post]
+    }).then(users => res.json(users));
 });
 
 router.post("/new", (req, res) => {
