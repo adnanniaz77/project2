@@ -76,8 +76,6 @@
     <script src="assets/js/theme.js"></script>
     <script>
         $(document).ready(function () {
-            const allPost = {};
-            const allAuthors = {};
 
             // get all Authors
             $.ajax({
@@ -93,6 +91,23 @@
                             ${author.username}
                             <span class="badge badge-primary badge-pill">14</span>
                         </li>
+                    `);
+                });
+            });
+
+            // get all Posts
+            $.ajax({
+                url: '/api/posts/all',
+                method: 'GET',
+            }).then(posts => {
+                console.log(posts)
+                posts.forEach(post => {
+
+                    // Show all Authors
+                    $('#displayPosts').append(`
+                        <h1><strong>${post.title}</strong><br></h1>
+                        <small class="text-info"><strong>author</small>
+                        <p>${post.body}</p>
                     `);
                 });
             });
