@@ -39,49 +39,20 @@
             <div class="container">
                 <div class="row">
                     <div class="col col-md-8">
-                        <div class="info mb-5">
-                            <h1><strong>Information Technlogy</strong><br></h1><small class="text-info"><strong>by Adnan
-                                    Niaz</strong></small>
+                        <div class="info mb-5" id="displayPosts">
+                            <h1><strong>Information Technlogy</strong><br></h1>
+                            <small class="text-info"><strong>by Adnan Niaz</strong></small>
                             <p>Nam a ultrices mauris. Nam efficitur, lorem a vehicula interdum, ligula velit euismod
-                                lorem,
-                                vitae vehicula ligula tortor eu leo. Maecenas porttitor massa ut vestibulum euismod.
-                                Aliquam
-                                eget mi aliquam.</p>
-                        </div>
-                        <div class="info mb-5">
-                            <h1><strong>Information Technlogy</strong><br></h1><small class="text-info"><strong>by Adnan
-                                    Niaz</strong></small>
-                            <p>Nam a ultrices mauris. Nam efficitur, lorem a vehicula interdum, ligula velit euismod
-                                lorem,
-                                vitae vehicula ligula tortor eu leo. Maecenas porttitor massa ut vestibulum euismod.
-                                Aliquam
-                                eget mi aliquam.</p>
-                        </div>
-                        <div class="info mb-5">
-                            <h1><strong>Information Technlogy</strong><br></h1><small class="text-info"><strong>by Adnan
-                                    Niaz</strong></small>
-                            <p>Nam a ultrices mauris. Nam efficitur, lorem a vehicula interdum, ligula velit euismod
-                                lorem,
-                                vitae vehicula ligula tortor eu leo. Maecenas porttitor massa ut vestibulum euismod.
-                                Aliquam
-                                eget mi aliquam.</p>
+                                lorem, vitae vehicula ligula tortor eu leo. Maecenas porttitor massa ut vestibulum
+                                euismod. Aliquam eget mi aliquam.
+                            </p>
                         </div>
                     </div>
+
+                    <!-- Authors Section -->
                     <div class="col col-md-3 offset-1">
-                        <h3>Authors</h3>
-                        <ul class="list-group">
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Cras justo odio
-                                <span class="badge badge-primary badge-pill">14</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Dapibus ac facilisis in
-                                <span class="badge badge-primary badge-pill">2</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Morbi leo risus
-                                <span class="badge badge-primary badge-pill">1</span>
-                            </li>
+                        <h3>AuthAuthors</h3>
+                        <ul class="list-group" id="displayAuthors">
                         </ul>
                     </div>
                 </div>
@@ -105,6 +76,8 @@
     <script src="assets/js/theme.js"></script>
     <script>
         $(document).ready(function () {
+            const allPost = {};
+            const allAuthors = {};
 
             // get all Authors
             $.ajax({
@@ -112,6 +85,16 @@
                 method: 'GET',
             }).then(authors => {
                 console.log(authors)
+                authors.forEach(author => {
+
+                    // Show all Authors
+                    $('#displayAuthors').append(`
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            ${author.username}
+                            <span class="badge badge-primary badge-pill">14</span>
+                        </li>
+                    `);
+                });
             });
         })
     </script>
