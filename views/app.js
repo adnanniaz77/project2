@@ -35,7 +35,7 @@ $(document).ready(function() {
                         <tr><td>Latitude</td><td>${res.latitude}</td></tr>
                         <tr><td>Longitude</td><td>${res.longitude}</td></tr>
                         <tr><td colspan="2" align="right"><button onclick="document.getElementById('id03').style.display='block'"
-                        style="width:auto;">Save results</button></td></tr>
+                        style="width:auto; id="saveBtn">Save results</button></td></tr>
                     `);
             });
         }

@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const path = require("path");
+const db = require("../models");
 
 router.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "../views/home.html"));
+    res.send("Post Routes");
 });
 
 module.exports = router;
